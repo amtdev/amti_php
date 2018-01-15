@@ -1,2 +1,2 @@
-# phpapp
-a simple chef cookbook for creating php apps running on Apache
+# amti_php
+a simple chef cookbook for configuring php

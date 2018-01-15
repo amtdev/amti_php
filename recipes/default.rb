@@ -1,5 +1,5 @@
 #
-# Cookbook:: phpapp
+# Cookbook:: amti_php
 # Recipe:: default
 #
 # Copyright:: 2018, Advanced Marketing Training, Inc.

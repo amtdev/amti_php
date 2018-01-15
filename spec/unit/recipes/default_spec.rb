@@ -1,5 +1,5 @@
 #
-# Cookbook:: phpapp
+# Cookbook:: amti_php
 # Spec:: default
 #
 # Copyright:: 2018, Advanced Marketing Training, Inc.
@@ -19,7 +19,7 @@
 
 require 'spec_helper'
 
-describe 'phpapp::default' do
+describe 'amti_php::default' do
   context 'When all attributes are default, on an Ubuntu 16.04' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:

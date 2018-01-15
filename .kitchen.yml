@@ -19,7 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[phpapp::default]
+      - recipe[amti_php::default]
     verifier:
       inspec_tests:
         - test/smoke/default
