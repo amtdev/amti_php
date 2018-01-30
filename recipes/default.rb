@@ -16,3 +16,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+template '/etc/php5/apache2/php.ini' do
+  source 'php.ini.erb'
+  mode 0644
+  owner 'root'
+  group 'root'
+  variables(
+    :memory_limit        	 => node['amti_php']['memory_limit'],
+    :post_max_size        	 => node['amti_php']['post_max_size'],
+    :upload_max_filesize     => node['amti_php']['upload_max_filesize'],
+    :max_execution_time      => node['amti_php']['max_execution_time'],
+    :max_input_time        	 => node['amti_php']['max_input_time'],
+    :max_input_vars        	 => node['amti_php']['max_input_vars'],
+    :curl_cainfo			 => node['amti_php']['curl_cainfo'])
+end
+
+template '/etc/php5/mods-available/xdebug.ini' do
+  source 'xdebug.ini.erb'
+  mode 0644
+  owner 'root'
+  group 'root'
+  variables(:debugger_allow_hosts => node['amti_php']['debugger_allow_hosts'])
+end
+
+service "apache2" do
+  action :restart
+end
