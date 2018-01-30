@@ -36,7 +36,10 @@ template '/etc/php5/mods-available/xdebug.ini' do
   mode 0644
   owner 'root'
   group 'root'
-  variables(:debugger_allow_hosts => node['amti_php']['debugger_allow_hosts'])
+  variables(:zend_extension => node['amti_php']['xdebug']['zend_extension'],
+            :idekey => node['amti_php']['xdebug']['idekey'],
+            :remote_host => node['amti_php']['xdebug']['remote_host'],
+            :remote_port => node['amti_php']['xdebug']['remote_port'])
 end
 
 service "apache2" do

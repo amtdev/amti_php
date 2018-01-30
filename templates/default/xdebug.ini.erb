@@ -1,9 +1,9 @@
-zend_extension="/usr/lib/php5/20121212/xdebug.so"
+zend_extension=<%= @zend_extension %>
 xdebug.remote_connect_back=true
-xdebug.idekey=PHPSTORM
+xdebug.idekey=<%= @idekey %>
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
 xdebug.remote_mode=req
-xdebug.remote_host=10.0.2.15
-xdebug.remote_port=10000
+xdebug.remote_host=<%= @remote_host %>
+xdebug.remote_port=<%= @remote_port %>
 xdebug.max_nesting_level=300
