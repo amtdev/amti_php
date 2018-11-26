@@ -16,12 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-template '/etc/php5/apache2/php.ini' do
+template "/etc/"+node['amti_php']['php_dir']+"/apache2/php.ini" do
   source 'php.ini.erb'
   mode 0644
   owner 'root'
   group 'root'
   variables(
+    :php_dir      	         => node['amti_php']['php_dir'],
     :memory_limit        	 => node['amti_php']['memory_limit'],
     :post_max_size        	 => node['amti_php']['post_max_size'],
     :upload_max_filesize     => node['amti_php']['upload_max_filesize'],
@@ -31,7 +32,7 @@ template '/etc/php5/apache2/php.ini' do
     :curl_cainfo			 => node['amti_php']['curl_cainfo'])
 end
 
-template '/etc/php5/mods-available/xdebug.ini' do
+template "/etc/"+node['amti_php']['php_dir']+"/mods-available/xdebug.ini" do
   source 'xdebug.ini.erb'
   mode 0644
   owner 'root'
